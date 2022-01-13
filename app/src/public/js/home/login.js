@@ -15,8 +15,10 @@ function login() {
   fetch('/login', {
     method: 'POST',
     headers: {
-      "content-Type": "application/json",
+      'content-Type': 'application/json',
     },
     body: JSON.stringify(req),
-  });
+  })
+    .then((res) => res.json())
+    .then((res) => console.log(res));
 }
