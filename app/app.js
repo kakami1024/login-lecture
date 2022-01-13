@@ -10,7 +10,7 @@ const home = require('./src/routes/home'); // 폴더를 상대적으로 명시�
 app.set('views', './src/views');
 app.set('view engine', 'ejs');
 
-app.use(express.static(`${__dirname}/src/public`));
+app.use(express.static(`${__dirname}/src/public`)); // js 파일 연결하기
 app.use('/', home); // use => 미들웨어를 등록해주는 메소드
 
 module.exports = app; // app 내보내기
