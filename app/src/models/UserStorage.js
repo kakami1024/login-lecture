@@ -2,7 +2,7 @@
 
 class UserStorage {
   static #users = {
-    // 은닉화
+    // #users -> 은닉화
     id: ['wjs', '김코딩', '나개발'],
     psword: ['1234', '1234', '123456'],
     name: ['node', 'java', '서버'],
@@ -29,6 +29,14 @@ class UserStorage {
     }, {});
 
     return userInfo;
+  }
+
+  static save(userInfo) {
+    const users = this.#users;
+    users.id.push(userInfo.id);
+    users.name.push(userInfo.name);
+    users.psword.push(userInfo.psword);
+    return { success: true };
   }
 }
 
