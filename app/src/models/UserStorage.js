@@ -3,7 +3,8 @@
 const fs = require('fs').promises;
 
 class UserStorage {
-  static #getUserInfo(data, id) { // 프라이빗한 변수나 메서드는   최상단으로 위치해야한다.
+  // 프라이빗한 변수나 메서드는 최상단으로 위치해야한다.
+  static #getUserInfo(data, id) {
     const users = JSON.parse(data);
     const idx = users.id.indexOf(id);
     const usersKeys = Object.keys(users); // -> [id,psword,name]
